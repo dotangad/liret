@@ -14,5 +14,5 @@ export interface IPageProps extends Page<PageProps> {
     errors: any;
     authenticated: boolean;
     user: IUser;
-  }
+  };
 }

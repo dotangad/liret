@@ -9,9 +9,9 @@ interface IErrorProps {
 
 const Error: React.FC<IErrorProps> = ({ status, message }: IErrorProps) => {
   useTitle(String(status));
-  
+
   return (
-    <Layout links={[{href: "/", label: "home"}]}>
+    <Layout links={[{ href: "/", label: "home" }]}>
       <div className="flex items-center justify-center h-full w-full px-5">
         <div className="bg-white w-full max-w-sm p-5 rounded-lg">
           <h1 className="font-bold text-2xl mb-3">{status}</h1>

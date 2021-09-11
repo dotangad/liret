@@ -18,7 +18,9 @@ const Layout: React.FC<ILayoutProps> = ({ children, links }: ILayoutProps) => {
     <div className="flex flex-col w-full h-full bg-gray-bg">
       <nav className="flex p-5 sm:px-12 justify-between items-center flex-col sm:flex-row">
         <div className="flex sm:w-1/3 w-full justify-center sm:justify-start">
-          <div className="font-extrabold text-lg uppercase text-gray-400 tracking-wide">LIRET</div>
+          <div className="font-extrabold text-lg uppercase text-gray-400 tracking-wide">
+            LIRET
+          </div>
         </div>
 
         <div className="flex items-center justify-center sm:justify-end sm:w-1/3 w-full">
@@ -55,7 +57,8 @@ const Layout: React.FC<ILayoutProps> = ({ children, links }: ILayoutProps) => {
           </a>
         </div>
         <div>
-         Source <a
+          Source{" "}
+          <a
             href="https://github.com/dotangad/liret"
             className="font-bold"
             target="_blank"

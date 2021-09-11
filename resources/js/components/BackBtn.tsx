@@ -6,7 +6,10 @@ interface IBackBtnProps {
   className?: string;
 }
 
-const BackBtn:React.FC<IBackBtnProps> = ({href, className}: IBackBtnProps) => {
+const BackBtn: React.FC<IBackBtnProps> = ({
+  href,
+  className,
+}: IBackBtnProps) => {
   return (
     <InertiaLink
       href={href}
