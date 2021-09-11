@@ -5,9 +5,10 @@ interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
 }
 
-const TextInput: React.FC<IProps> = ({ label, error, name, ...props }: IProps) => {
+const TextInput: React.FC<IProps> = ({ label, error, name, className, ...props }: IProps) => {
+  props = {...props, className: ""};
   return (
-    <div className="input-group">
+    <div className={`input-group ${className}`}>
       <label htmlFor={name}>{label}</label>
       <input type={props.type} placeholder={props.placeholder} name={name} {...props} />
       {error && <div className="error">{error}</div>}

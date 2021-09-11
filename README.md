@@ -12,3 +12,8 @@ cp .env.example .env
 ./vendor/bin/sail up -d
 npm run watch
 ```
+
+## TODO
+- [ ] Setup prettier
+- [ ] Authorization and gates
+- [ ] Laravel websockets
