@@ -1,5 +1,6 @@
 import React from "react";
 import { InertiaLink, usePage } from "@inertiajs/inertia-react";
+import { IPageProps } from "../lib/types";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -8,11 +9,11 @@ interface ILayoutProps {
 
 const Layout: React.FC<ILayoutProps> = ({ children, links }: ILayoutProps) => {
   const {
-    props: { authenticated },
-  } = usePage();
-  links = authenticated
-    ? [...links, { href: "/auth/logout", label: "Logout" }]
-    : links;
+    props: { authenticated, user },
+  } = usePage<IPageProps>();
+  links = links
+    .concat(user?.admin ? [{ href: "/admin", label: "Admin" }] : [])
+    .concat(authenticated ? [{ href: "/auth/logout", label: "Logout" }] : []);
 
   return (
     <div className="flex flex-col w-full h-full bg-gray-bg">

@@ -14,5 +14,5 @@ npm run watch
 ```
 
 ## TODO
-- [ ] Authorization and gates
+- [ ] Frontend authorization components
 - [ ] Laravel websockets
