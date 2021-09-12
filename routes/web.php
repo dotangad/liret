@@ -62,6 +62,16 @@ Route::get('/auth/logout', [AuthController::class, 'destroy'])
   ->middleware(['auth'])
   ->name('auth.logout');
 
+// ----- Admin -----
+Route::prefix('/admin')
+  ->middleware(['auth', 'can:admin'])
+  ->name('admin.')
+  ->group(function () {
+    Route::get('/', function () {
+      return Inertia::render('admin/index');
+    })->name('index');
+  });
+
 if (App::environment('local')) {
   Route::get('/authn', function () {
     return dd(Auth::user());
