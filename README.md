@@ -14,6 +14,5 @@ npm run watch
 ```
 
 ## TODO
-- [ ] Setup prettier
 - [ ] Authorization and gates
 - [ ] Laravel websockets
