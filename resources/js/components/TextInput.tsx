@@ -12,7 +12,6 @@ const TextInput: React.FC<IProps> = ({
   className,
   ...props
 }: IProps) => {
-  props = { ...props, className: "" };
   return (
     <div className={`input-group ${className}`}>
       <label htmlFor={name}>{label}</label>
@@ -20,7 +19,7 @@ const TextInput: React.FC<IProps> = ({
         type={props.type}
         placeholder={props.placeholder}
         name={name}
-        {...props}
+        {...{ ...props, className: "" }}
       />
       {error && <div className="error">{error}</div>}
     </div>
