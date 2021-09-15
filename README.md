@@ -30,7 +30,7 @@ This file also has `IUser`, the interface for the User model.
 
 ### `useTitle`
 
-`resources/js/lib/use-title.tsx` contains the `useTitle` hook. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
+`resources/js/lib/use-title.tsx` contains the `useTitle` hook, used to set the title from inside a React component. You could also use [Inertia's `Head` component](https://inertiajs.com/title-and-meta) for this.
 
 ### Artisan command to create pages
 
@@ -58,8 +58,8 @@ Password: adminadmin
 Two gates are defined in `AppServiceProvider.php`, they're used for authorization in the controllers and routes.
 
 ```php
-    Gate::define('admin', fn (User $user) => $user->admin);
-    Gate::define('user', fn (User $user) => !$user->admin);
+Gate::define('admin', fn (User $user) => $user->admin);
+Gate::define('user', fn (User $user) => !$user->admin);
 ```
 
 ### Frontend Authorization
