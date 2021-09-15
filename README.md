@@ -19,7 +19,7 @@ npm run watch
 1. Run the Websocket Server
 
 ```sh
-./vendor/bin/sail artisan websockets:server
+./vendor/bin/sail artisan websockets:serve
 ```
 
 2. Check by going to http://localhost:5432/laravel-websockets and click on `Connect`
