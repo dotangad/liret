@@ -1,10 +1,11 @@
-import "./bootstrap";
 import { InertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
+import Pusher from "pusher-js";
 import React from "react";
 import { render } from "react-dom";
 
 const app = document.getElementById("app");
+window.Pusher = Pusher;
 
 InertiaProgress.init({
   // The delay after which the progress bar will
