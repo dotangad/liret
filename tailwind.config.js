@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  mode: "jit",
   purge: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
@@ -21,9 +22,6 @@ module.exports = {
         "accent-dark": "#1e5abb",
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };

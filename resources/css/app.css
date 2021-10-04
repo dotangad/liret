@@ -30,7 +30,7 @@ html,
 .button {
   @apply cursor-pointer bg-gray-bg block rounded-lg p-4 text-center
          uppercase leading-none font-bold border-2 border-gray-bg
-         text-sm text-gray-800 transition
+         text-sm text-gray-700 transition
          hover:border-accent focus:border-accent 
          focus:outline-none focus:shadow-none;
 }
