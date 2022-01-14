@@ -3,6 +3,7 @@
 /public/storage
 /public/js/*
 /public/css/*
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
@@ -17,3 +18,4 @@ yarn-error.log
 /.vscode
 /.log
 tags
+.DS_Store
