@@ -12,44 +12,45 @@ const Index: React.FC = () => {
   authenticated ? useTitle(user.name) : useTitle("Home");
 
   return (
-    <Layout links={[]}>
-      <div className="flex items-center justify-center h-full w-full px-5">
-        <Guest>
-          <div className="bg-white w-full max-w-sm p-5 rounded-lg">
-            <Link className="button my-3" href="/auth/login">
-              Login
-            </Link>
-            <Link className="button my-3" href="/auth/register">
-              Register
-            </Link>
-          </div>
-        </Guest>
+    <div className="flex items-center justify-center h-full w-full px-5">
+      <Guest>
+        <div className="bg-white w-full max-w-sm p-5 rounded-lg">
+          <Link className="button my-3" href="/auth/login">
+            Login
+          </Link>
+          <Link className="button my-3" href="/auth/register">
+            Register
+          </Link>
+        </div>
+      </Guest>
 
-        <Authenticated>
-          <div className="bg-white w-full max-w-md p-5 rounded-lg">
-            <pre
-              style={{
-                whiteSpace: "pre-wrap",
-                wordWrap: "break-word",
-              }}
-            >
-              {JSON.stringify(user, null, 2)}
-            </pre>
-            <div className="mt-4">
-              <Admin>
-                <Link className="button w-full mb-4" href="/admin">
-                  Admin
-                </Link>
-              </Admin>
-              <Link className="button w-full" href="/auth/logout">
-                Logout
+      <Authenticated>
+        <div className="bg-white w-full max-w-md p-5 rounded-lg">
+          <pre
+            style={{
+              whiteSpace: "pre-wrap",
+              wordWrap: "break-word",
+            }}
+          >
+            {JSON.stringify(user, null, 2)}
+          </pre>
+          <div className="mt-4">
+            <Admin>
+              <Link className="button w-full mb-4" href="/admin">
+                Admin
               </Link>
-            </div>
+            </Admin>
+            <Link className="button w-full" href="/auth/logout">
+              Logout
+            </Link>
           </div>
-        </Authenticated>
-      </div>
-    </Layout>
+        </div>
+      </Authenticated>
+    </div>
   );
 };
+
+// @ts-ignore
+Index.layout = (page) => <Layout links={[]}>{page}</Layout>;
 
 export default Index;

@@ -1,4 +1,4 @@
-import { InertiaApp } from "@inertiajs/inertia-react";
+import { createInertiaApp } from "@inertiajs/inertia-react";
 import { InertiaProgress } from "@inertiajs/progress";
 import Pusher from "pusher-js";
 import React from "react";
@@ -22,14 +22,10 @@ InertiaProgress.init({
   showSpinner: false,
 });
 
-render(
-  <>
-    <InertiaApp
-      initialPage={JSON.parse(app.dataset.page)}
-      resolveComponent={(name) =>
-        import(`./pages/${name}.tsx`).then((module) => module.default)
-      }
-    />
-  </>,
-  app
-);
+createInertiaApp({
+  resolve: (name) =>
+    import(`./pages/${name}.tsx`).then((module) => module.default),
+  setup({ el, App, props }) {
+    render(<App {...props} />, el);
+  },
+});
